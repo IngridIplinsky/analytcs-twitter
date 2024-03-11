@@ -1,10 +1,10 @@
 {
-  "tableName": "schema_pinot",
+  "tableName": "schemaPinot",
   "segmentsConfig" : {
     "timeColumnName": "timestamp",
     "timeType": "MILLISECONDS",
     "replication" : "2",
-    "schemaName" : "schema_pinot"
+    "schemaName" : "schemaPinot"
   },
   "tableIndexConfig" : {
     "invertedIndexColumns" : [],
