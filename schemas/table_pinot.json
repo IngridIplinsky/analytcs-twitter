@@ -1,0 +1,19 @@
+{
+  "tableName": "schema_pinot",
+  "segmentsConfig" : {
+    "timeColumnName": "timestamp",
+    "timeType": "MILLISECONDS",
+    "replication" : "2",
+    "schemaName" : "schema_pinot"
+  },
+  "tableIndexConfig" : {
+    "invertedIndexColumns" : [],
+    "loadMode"  : "MMAP"
+  },
+  "tenants" : {
+    "broker":"DefaultTenant",
+    "server":"DefaultTenant"
+  },
+  "tableType":"OFFLINE",
+  "metadata": {}
+}

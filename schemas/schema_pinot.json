@@ -1,0 +1,29 @@
+{
+  "schemaName": "schema_pinot",
+  "dimensionFieldSpecs": [
+    {
+      "name": "Tweet_ID",
+      "dataType": "INT"
+    },
+    {
+      "name": "Username",
+      "dataType": "STRING"
+    },
+    {
+      "name": "Text",
+      "dataType": "STRING"
+    },
+    {
+      "name": "Retweets",
+      "dataType": "INT"
+    },
+    {
+      "name": "Likes",
+      "dataType": "INT"
+    },
+    {
+      "name": "Timestamp",
+      "dataType": "STRING"
+    }
+  ]
+}
