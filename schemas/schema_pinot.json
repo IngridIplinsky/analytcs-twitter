@@ -1,5 +1,5 @@
 {
-  "schemaName": "schema_pinot",
+  "schemaName": "schemaPinot",
   "dimensionFieldSpecs": [
     {
       "name": "Tweet_ID",
