@@ -1,31 +1,26 @@
-def producerSetting():
-    json = {
-        'client.id': '',
-        'bootstrap.server': broker,
-        'acks': 'all',
-        'enable.idempotence': ' true',
-        'linger.ms': 100,
-        'compression.type': 'gzip',
-        'max.in.flight.requests.per.connection': 5
-    }
+# Função de entrega assíncrona do Kafka
+def delivery_report(err, msg):
+    if err is not None:
+        print(f'Erro ao enviar a mensagem para o Kafka: {err}')
+    else:
+        print(f'Mensagem enviada para o Kafka: {msg.value()}')
 
-def get_producer_config():
-    producer_conf = {
-        'bootstrap.servers': 'pkc-7xoy1.eu-central-1.aws.confluent.cloud:9092',
-        'security.protocol': 'SASL_SSL',
-        'sasl.mechanisms': 'PLAIN',
-        'sasl.username': 'SGMBTLJXGMJR46E2',
-        'sasl.password': 'yEikfuODP3bgJORu4GZNQp2HfB54XQ4vAjApYHh2RHEM2LJNUrjjhlwhWkTFCEvq'
-        }
-    return producer_conf
+kafka_bootstrap_servers = 'localhost:9092'
+topic1 = 'topic_twitter'
+topic2 = 'topic_tweets'
+topic_spark = 'topic_spark'
 
-def get_schema_config():
-    schema_registry_conf = {'url': 'https://psrc-o268o.eu-central-1.aws.confluent.cloud',
-                            'basic.auth.user.info': "LVG7OXSB3VKDDFZR:3anbUJAcGTOUL4c344N+XfgRRv4Q0EmQvQN2ebnc+LOQU8F+qFsDTfLtGmskzN/d"
-    }
-    return schema_registry_conf
-
-input_topic = 'avroTwitter'
-output_topic = 'sparkTwitter'
-starting_offsets = 'latest'
+starting_offsets = 'earliest'
 checkpoint = 'checkpoint'
+
+producer_conf = {
+    'bootstrap.servers': kafka_bootstrap_servers,
+    'on_delivery': delivery_report,
+    'acks': 'all',
+    'enable.idempotence': True,
+    'linger.ms': 100,
+    'compression.type': 'gzip',
+    'max.in.flight.requests.per.connection': 5,
+    "request.required.acks": -1, 
+    "retries": 5,
+}
