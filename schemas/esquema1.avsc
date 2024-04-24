@@ -1,0 +1,13 @@
+{
+	"type": "record",
+	"name": "EsquemaTwitterDataset",
+	"namespace": "com.avro",
+	"fields": [
+		{"name": "Tweet_ID", "type":"int"},
+		{"name": "Username", "type":"string"},
+        {"name": "Text", "type":"string"},
+        {"name": "Retweets", "type":"int"},
+        {"name": "Likes", "type":"int"},
+        {"name": "Timestamp", "type":"string"}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"name": "EsquemaTweets",
+	"namespace": "com.avro",
+	"fields": [
+		{"name": "author", "type":"string"},
+		{"name": "content", "type":"string"},
+        {"name": "country", "type":"string"},
+        {"name": "date_time", "type":"string"},
+		{"name": "id", "type":"string"},
+        {"name": "language", "type":"string"},
+        {"name": "latitude", "type":"string"},
+		{"name": "longitude", "type":"string"},
+		{"name": "number_of_likes", "type":"int"},
+		{"name": "number_of_shares", "type":"int"}
+	]
+}
